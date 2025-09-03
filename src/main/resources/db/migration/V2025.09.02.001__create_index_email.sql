@@ -1,1 +1,0 @@
-CREATE INDEX account_email_idx ON account (email);
