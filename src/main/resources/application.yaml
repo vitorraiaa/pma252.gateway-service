@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+
+  mvc:
+    problemdetails:
+      enabled: true
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+
+            - id: insper
+              uri: https://www.insper.edu.br
+              predicates:
+                - Path=/insper/**
+
+            - id: account
+              uri: http://account:8080
+              predicates:
+                - Path=/account/**
