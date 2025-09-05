@@ -24,3 +24,10 @@ spring:
               uri: http://account:8080
               predicates:
                 - Path=/account/**
+
+          globalcors:
+            corsConfigurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowedHeaders: "*"
+                allowedMethods: "*"
