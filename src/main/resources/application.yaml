@@ -25,6 +25,11 @@ spring:
               predicates:
                 - Path=/account/**
 
+            - id: auth
+              uri: http://auth:8080
+              predicates:
+                - Path=/auth/**
+
           globalcors:
             corsConfigurations:
               '[/**]':
