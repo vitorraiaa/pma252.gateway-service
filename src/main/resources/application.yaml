@@ -36,3 +36,8 @@ spring:
                 allowedOrigins: "*"
                 allowedHeaders: "*"
                 allowedMethods: "*"
+
+logging:
+  level:
+    root: info
+    store: debug
