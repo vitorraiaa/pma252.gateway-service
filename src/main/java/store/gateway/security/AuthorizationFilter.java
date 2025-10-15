@@ -110,7 +110,10 @@ public class AuthorizationFilter implements GlobalFilter {
             .request(
                 exchange.getRequest()
                     .mutate()
+                    // keep existing id-account header for services that expect it
                     .header("id-account", idAccount)
+                    // also set User-Id to support services (like order) that expect this header name
+                    .header("User-Id", idAccount)
                     .build()
             ).build();
         logger.debug("updated headers: " + modified.getRequest().getHeaders().toString());
